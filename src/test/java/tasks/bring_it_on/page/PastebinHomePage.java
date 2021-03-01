@@ -44,6 +44,7 @@ public class PastebinHomePage extends AbstractPage {
         new PastebinSelect(driver, pasteExpirationSelect).selectOption(paste.getPasteExpirationValue());
         pasteNameInput.sendKeys(paste.getTitle());
         createButton.click();
+        waiter.waitUntilPostViewBePresent();
         return new PasteCreatingResultPage(driver);
     }
 }
